@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Novatrix Backtest herunterladen</title>
+<meta name="description" content="Novatrix Backtest für Windows 10/11 herunterladen.">
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --text: #16171a; --muted: #5f636b; --line: #e3e0d8;
+  --gold: #9a7420; --gold-btn: #b8892c; --gold-btn-text: #ffffff; --hint-bg: #fbf6e9; --hint-line: #ead9ae;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1116; --panel: #161a21; --text: #e9e7e1; --muted: #9da3ad; --line: #2a303a;
+    --gold: #d8b35c; --gold-btn: #d0a548; --gold-btn-text: #141210; --hint-bg: #231d10; --hint-line: #4a3c1c;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+main { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; }
+header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; }
+header img { width: 64px; height: 64px; object-fit: contain; flex: none; }
+h1 { font-size: 26px; line-height: 1.15; margin: 0; letter-spacing: .01em; }
+.sub { color: var(--muted); margin: 2px 0 0; font-size: 14px; }
+.karte { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; margin-bottom: 16px; }
+.knopf { display: block; width: 100%; text-align: center; padding: 15px 18px; border-radius: 10px;
+  background: var(--gold-btn); color: var(--gold-btn-text); font-weight: 700; font-size: 17px; text-decoration: none; }
+.knopf:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+.knopf.aus { opacity: .5; pointer-events: none; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--muted); font-size: 13.5px; margin-top: 12px; }
+h2 { font-size: 17px; margin: 0 0 12px; }
+ol { margin: 0; padding-left: 0; list-style: none; counter-reset: s; }
+ol li { counter-increment: s; position: relative; padding: 0 0 14px 40px; }
+ol li:last-child { padding-bottom: 0; }
+ol li::before { content: counter(s); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%;
+  border: 1.5px solid var(--gold); color: var(--gold); font-weight: 700; font-size: 14px;
+  display: flex; align-items: center; justify-content: center; }
+ol li b { display: block; }
+ol li span { color: var(--muted); font-size: 14.5px; }
+.hinweis { background: var(--hint-bg); border: 1px solid var(--hint-line); }
+.hinweis p { margin: 0 0 8px; font-size: 14.5px; }
+.hinweis p:last-child { margin: 0; }
+.klein { color: var(--muted); font-size: 13px; }
+footer { color: var(--muted); font-size: 12.5px; margin-top: 24px; line-height: 1.55; }
+code { font-family: Consolas, "SF Mono", monospace; font-size: 13px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="{{LOGO}}" alt="Novatrix Logo" width="64" height="64">
+    <div>
+      <h1>Novatrix Backtest</h1>
+      <p class="sub">Strategien bauen, mit allen Kosten testen und gegen Prop-Firm-Regeln prüfen.</p>
+    </div>
+  </header>
+
+  <section class="karte">
+    <a class="knopf {{KNOPF_KLASSE}}" href="{{URL}}" id="dl">{{KNOPF_TEXT}}</a>
+    <div class="meta">
+      <span>Version <b>{{VERSION}}</b></span>
+      <span>{{GROESSE}}</span>
+      <span>{{DATUM}}</span>
+      <span>Windows 10 / 11 (64 Bit)</span>
+    </div>
+  </section>
+
+  <section class="karte">
+    <h2>In drei Schritten startklar</h2>
+    <ol>
+      <li><b>Installieren</b><span>Heruntergeladene Datei öffnen. Keine Admin-Rechte nötig, kein Python, dauert unter einer Minute.</span></li>
+      <li><b>Key eingeben</b><span>Beim ersten Start fragt das Programm nach deinem Key (aus der Nachricht, die du bekommen hast). Einmal Internet nötig, danach läuft es bis zu 14 Tage offline.</span></li>
+      <li><b>Daten laden</b><span>Der Assistent führt dich: dein MetaTrader 5, kostenlose Dukascopy-Daten oder eine eigene CSV. Danach ein Lehrbuch-Beispiel öffnen und durch den Prüfpfad schicken.</span></li>
+    </ol>
+  </section>
+
+  <section class="karte hinweis">
+    <h2>Windows warnt beim Installieren?</h2>
+    <p>Der Installer ist noch nicht digital signiert. Windows SmartScreen zeigt deshalb „Der Computer wurde durch Windows geschützt“.</p>
+    <p>Klick auf <b>„Weitere Informationen“</b> und dann auf <b>„Trotzdem ausführen“</b>.</p>
+    <p class="klein">Prüfsumme (SHA-256) der Datei: <code>{{SHA}}</code></p>
+  </section>
+
+  <footer>
+    Keine Anlageberatung. Novatrix Backtest ist ein Werkzeug zum Testen von Handelsstrategien mit historischen Daten;
+    vergangene Ergebnisse sagen nichts über zukünftige. Deine Daten, Strategien und Berichte bleiben auf deinem PC
+    (<code>%APPDATA%\Novatrix</code>) — auch beim Deinstallieren.
+  </footer>
+</main>
+</body>
+</html>
